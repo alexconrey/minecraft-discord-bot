@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
+import argparse
 import os
-#import discord.ext
-from discord.ext import commands
-from mcrcon import MCRcon
-
 import re
 import yaml
+
+from discord.ext import commands
+from mcrcon import MCRcon
 
 cfg = {}
 
@@ -83,8 +83,12 @@ async def show_online_players(message):
     await message.channel.send(formatMessage(players))
 
 def main():
+    parser = argparse.ArgumentParser(description='Minecraft Discord Bot')
+    parser.add_argument('--config', required=True, help='Path to config.yaml')
+    args = parser.parse_args()
+
     global cfg
-    cfg = loadCfg('config.yaml')
+    cfg = loadCfg(args.config)
 
     client.run(cfg['discord']['token'])
 
