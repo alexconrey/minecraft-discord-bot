@@ -9,10 +9,6 @@ import yaml
 
 cfg = {}
 
-#DISCORD_TOKEN = 'NzAzMDM2NzA4ODk5NTIwNTc0.XqIwIQ.BG08ksBDmC32877X91rtpVQ52LI'
-#SERVER_ID = '591098935393910834'
-
-#client = discord.Client()
 client = commands.Bot(command_prefix='!')
 
 def loadCfg(file_name):
