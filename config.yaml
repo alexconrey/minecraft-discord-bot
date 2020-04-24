@@ -1,0 +1,6 @@
+mc_host: '127.0.0.1'
+mc_pass: 'super_secure_password'
+
+discord:
+  token: ''
+  server_id: ''
